@@ -1,0 +1,19 @@
+useEffect(() => {
+    async function getMovie() {
+      const movieRes = await fetch('https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe')
+      const moviesJSON = await movieRes.json()
+      Promise.all(moviesJSON.people.map( async (person) => {
+        const peopleRes = await fetch(person)
+        const peopleJSON = await peopleRes.json()
+        setPeople((people) => [...people, peopleJSON])
+      }))
+      setMovie(moviesJSON)
+      setLoaded(true)
+    }
+
+    if (movie) {
+      getMovie()
+    }
+
+    return () => setLoaded(false)
+  }, [])

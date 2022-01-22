@@ -1,0 +1,41 @@
+.home-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.home-page-movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.home-page-movie-poster {
+  max-width: 85%;
+}
+
+.home-page-movie-title {
+  font-size: clamp(1.1rem, 4.5vw, 1.7rem);
+  margin-right: 0.25rem;
+}
+
+.movie-basic-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 85%;
+}
+
+@media screen and (max-width: 900px) {
+  .home-page-movie-poster {
+    max-width: 72%;
+  }
+  .movie-basic-info {
+    flex-direction: column;
+  }
+}
