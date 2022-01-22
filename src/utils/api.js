@@ -1,4 +1,5 @@
-const BASE_API_URL = "http://localhost:5000";
+const BASE_API_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 const GHIBLI_API_URL = "https://ghibliapi.herokuapp.com/films";
 
 export async function getMovies() {

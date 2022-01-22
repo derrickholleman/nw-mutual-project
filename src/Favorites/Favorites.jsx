@@ -29,7 +29,7 @@ const Favorites = () => {
 
     if (confirmDelete) {
       return await axios
-      .delete(`http://localhost:5000/favorites/${id}`)
+      .delete(`${process.env.REACT_APP_API_BASE_URL}/favorites/${id}`)
       .then(getFavorites)
       .then(setFavorites);
     } else {
