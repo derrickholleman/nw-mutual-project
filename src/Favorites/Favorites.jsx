@@ -70,9 +70,11 @@ const Favorites = () => {
           </div>
         ))}
       <footer>
-        <Link onClick={scrollToTop} to="/favorites" className="scroll-to-top">
-          Back to Top
-        </Link>
+        {favorites.length > 1 && (
+          <Link onClick={scrollToTop} to="/favorites" className="scroll-to-top">
+            Back to Top
+          </Link>
+        )}
       </footer>
     </div>
   );
