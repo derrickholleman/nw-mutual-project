@@ -43,10 +43,12 @@ const HomePage = () => {
                 <h2 className="home-page-movie-title">{movie.title}</h2>
                 <p>{movie.release_date}</p>
               </div>
-              <div className="home-page-movie-poster">
-                <Link to={`/${movie.id}`}>
-                  <img src={movie.image} alt={`${movie.title} poster`} />
-                </Link>
+              <div className="movie-poster-wrapper">
+                <div className="home-page-movie-poster">
+                  <Link to={`/${movie.id}`}>
+                    <img src={movie.image} alt={`${movie.title} poster`} />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -60,10 +62,12 @@ const HomePage = () => {
                 <h2 className="home-page-movie-title">{movie.title}</h2>
                 <p>{movie.release_date}</p>
               </div>
-              <div className="home-page-movie-poster">
-                <Link to={`/${movie.id}`}>
-                  <img src={movie.image} alt={`${movie.title} poster`} />
-                </Link>
+              <div className="movie-poster-wrapper">
+                <div className="home-page-movie-poster">
+                  <Link to={`/${movie.id}`}>
+                    <img src={movie.image} alt={`${movie.title} poster`} />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

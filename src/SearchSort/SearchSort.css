@@ -33,6 +33,7 @@ input:hover {
   cursor: pointer;
   transition: background-color .15s ease-in-out;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .sort-btn:active {

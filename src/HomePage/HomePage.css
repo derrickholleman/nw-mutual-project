@@ -14,8 +14,23 @@
   margin: 2rem auto;
 }
 
+.movie-poster-wrapper {
+  overflow: hidden;
+}
+
 .home-page-movie-poster {
   max-width: 85%;
+  margin: 0 auto;
+}
+
+.home-page-movie-poster:hover {
+  animation: posterGrow 1.75s ease-in-out;
+}
+
+@keyframes posterGrow {
+  50% {
+    transform: scale(1.3);
+  }
 }
 
 .home-page-movie-title {
