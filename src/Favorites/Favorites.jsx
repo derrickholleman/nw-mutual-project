@@ -25,10 +25,17 @@ const Favorites = () => {
   };
 
   const handleDeleteFavorite = async (id) => {
-    return await axios
-      .delete("http://localhost:5000/favorites/" + id)
+    const confirmDelete = window.confirm("Are you sure you want to delete this favorite?")
+
+    if (confirmDelete) {
+      return await axios
+      .delete(`http://localhost:5000/favorites/${id}`)
       .then(getFavorites)
       .then(setFavorites);
+    } else {
+      return null
+    }
+    
   };
 
   return (
