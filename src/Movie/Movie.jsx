@@ -35,7 +35,7 @@ const Movie = () => {
     }
 
     return () => setLoaded(false);
-  }, [isFavorite]);
+  }, []);
 
   const addToFavorites = () => {
     axios.post("http://localhost:5000/favorites", {
