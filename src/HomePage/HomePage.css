@@ -27,6 +27,10 @@
   animation: posterGrow 1.75s ease-in-out;
 }
 
+.year {
+  font-size: 1.1rem;
+}
+
 @keyframes posterGrow {
   50% {
     transform: scale(1.3);

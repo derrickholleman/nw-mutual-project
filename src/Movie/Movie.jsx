@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./Movie.css";
 import { useParams, Link } from "react-router-dom";
-import { getMovies } from "../utils/api";
+import { getMovies, getFavorites } from "../utils/api";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+const axios = require("axios");
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { movieId } = useParams();
+  const foundMovie = movies.find((movie) => movie.id === movieId);
 
   function loadMovies() {
     getMovies().then((movieRes) => {
@@ -19,24 +22,54 @@ const Movie = () => {
   useEffect(() => {
     if (movies) {
       loadMovies();
+
+      getFavorites().then((res) => {
+        const foundFav = res.find((favorite) => favorite.id === movieId);
+
+        if (foundFav) {
+          setIsFavorite(true);
+        } else {
+          setIsFavorite(false);
+        }
+      });
     }
 
     return () => setLoaded(false);
-  }, []);
+  }, [isFavorite]);
 
-  const foundMovie = movies.find((movie) => movie.id === movieId);
+  const addToFavorites = () => {
+    axios.post("http://localhost:5000/favorites", {
+      ...foundMovie,
+      favorite: true,
+    });
+
+    setIsFavorite(true);
+  };
 
   return (
     <div>
       {loaded && (
         <div>
+          {/* BACKGROUND CONTAINER */}
           <div
             style={{ backgroundImage: `url(${foundMovie.movie_banner})` }}
             className="background"
           ></div>
-          <h1 className="movie-header">
-            {foundMovie.title} ({foundMovie.release_date})
-          </h1>
+
+          <div className="movie-header">
+            <h1>
+              {foundMovie.title} ({foundMovie.release_date})
+            </h1>
+            <button
+              className={isFavorite ? "favorite-btn-disabled" : "favorite-btn"}
+              onClick={addToFavorites}
+              disabled={isFavorite}
+            >
+              {isFavorite
+                ? "Movie Added To Favorites!"
+                : "Add Movie to Favorites"}
+            </button>
+          </div>
           <Link to="/" className="back-arrow">
             <BsFillArrowLeftSquareFill />
           </Link>

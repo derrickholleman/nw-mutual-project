@@ -53,7 +53,7 @@ const HomePage = () => {
             <div key={movie.id} className="home-page-movie-container">
               <div className="movie-basic-info">
                 <h2 className="home-page-movie-title">{movie.title}</h2>
-                <p>{movie.release_date}</p>
+                <p className="year">{movie.release_date}</p>
               </div>
               <div className="movie-poster-wrapper">
                 <div className="home-page-movie-poster">
