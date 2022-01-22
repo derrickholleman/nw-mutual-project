@@ -3,7 +3,7 @@ import "./Movie.css";
 import { useParams, Link } from "react-router-dom";
 import { getMovies, getFavorites } from "../utils/api";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
-const axios = require("axios");
+import { addFavorite } from "../utils/api";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
@@ -39,11 +39,7 @@ const Movie = () => {
   }, [movieId]);
 
   const addToFavorites = () => {
-    axios.post(`${process.env.REACT_APP_API_BASE_URL}/favorites`, {
-      ...foundMovie,
-      favorite: true,
-    });
-
+    addFavorite(foundMovie);
     setIsFavorite(true);
   };
 
