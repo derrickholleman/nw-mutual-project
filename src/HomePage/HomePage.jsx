@@ -30,6 +30,7 @@ const HomePage = () => {
       <h1>Find A Ghibli Movie</h1>
       <SearchSort
         movies={movies}
+        setMovies={setMovies}
         setFilteredMovies={setFilteredMovies}
         setIsFiltering={setIsFiltering}
       />
