@@ -39,7 +39,7 @@ const Movie = () => {
   }, [movieId]);
 
   const addToFavorites = () => {
-    axios.post(process.env.REACT_APP_API_BASE_URL, {
+    axios.post(`${process.env.REACT_APP_API_BASE_URL}/favorites`, {
       ...foundMovie,
       favorite: true,
     });
