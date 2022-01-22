@@ -21,6 +21,7 @@ const SearchSort = ({
     } else {
       setIsFiltering(false);
     }
+    // eslint-disable-next-line
   }, [searchTitle]);
 
   const handleSortbyTitle = () => {
@@ -60,6 +61,7 @@ const SearchSort = ({
           .includes(searchTitle.trim().toLowerCase());
       })
     );
+    // eslint-disable-next-line
   }, [searchTitle]);
 
   return (

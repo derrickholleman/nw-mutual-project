@@ -35,7 +35,8 @@ const Movie = () => {
     }
 
     return () => setLoaded(false);
-  }, []);
+    // eslint-disable-next-line
+  }, [movieId]);
 
   const addToFavorites = () => {
     axios.post(process.env.REACT_APP_API_BASE_URL, {

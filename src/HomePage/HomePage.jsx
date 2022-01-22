@@ -25,6 +25,7 @@ const HomePage = () => {
     }
 
     return () => setLoaded(false);
+    // eslint-disable-next-line
   }, []);
 
   const scrollToTop = () => {
