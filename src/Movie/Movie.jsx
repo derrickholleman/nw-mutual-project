@@ -38,8 +38,8 @@ const Movie = () => {
     // eslint-disable-next-line
   }, [movieId]);
 
-  const addToFavorites = () => {
-    addFavorite(foundMovie);
+  const addToFavorites = async () => {
+    await addFavorite(foundMovie);
     setIsFavorite(true);
   };
 

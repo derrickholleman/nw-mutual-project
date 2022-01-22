@@ -4,7 +4,7 @@ import "./Favorites.css";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import { animateScroll as scroll } from "react-scroll";
-const axios = require("axios");
+import { deleteFavorite } from "../utils/api";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -25,17 +25,15 @@ const Favorites = () => {
   };
 
   const handleDeleteFavorite = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this favorite?")
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this favorite?"
+    );
 
     if (confirmDelete) {
-      return await axios
-      .delete(`${process.env.REACT_APP_API_BASE_URL}/favorites/${id}`)
-      .then(getFavorites)
-      .then(setFavorites);
+      await deleteFavorite(id).then(getFavorites).then(setFavorites);
     } else {
-      return null
+      return null;
     }
-    
   };
 
   return (

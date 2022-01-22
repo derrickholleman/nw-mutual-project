@@ -2,8 +2,6 @@ const BASE_API_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 const GHIBLI_API_URL = "https://ghibliapi.herokuapp.com/films";
 
-const axios = require("axios");
-
 export async function getMovies() {
   const moviesRes = await fetch(`${GHIBLI_API_URL}`);
   return await moviesRes.json();
@@ -25,5 +23,11 @@ export async function addFavorite(movie) {
       ...movie,
       favorite: true,
     }),
+  });
+}
+
+export async function deleteFavorite(id) {
+  return await fetch(`${BASE_API_URL}/favorites/${id}`, {
+    method: "DELETE",
   });
 }
