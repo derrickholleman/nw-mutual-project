@@ -1,18 +1,85 @@
 .background {
   background-repeat: no-repeat;
   background-size: cover;
-  max-height: 500px;
+  max-height: 400px;
   z-index: -1;
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.25;
+  opacity: 0.2;
 }
 
-@media screen and (max-width: 867px) {
-    .background {
-        background-size: contain;
-    }
+.movie-header {
+  max-width: 80%;
+  margin-bottom: 8rem;
+}
+
+.movie-info-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.movie-info-right-side {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+  margin-left: 1rem;
+}
+
+.movie-info-right-side p {
+  margin: .5rem 0;
+  font-size: 1.10rem;
+}
+
+.movie-info-poster {
+  max-width: 500px;
+}
+
+.back-arrow {
+  font-size: 2rem;
+  position: absolute;
+  top: 22px;
+  left: 15px;
+}
+
+@media screen and (max-width: 1130px) {
+  .movie-info-section {
+    flex-direction: column;
+  }
+  .movie-info-right-side {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .background {
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .movie-info-left-side, .movie-info-right-side {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .back-arrow {
+    font-size: 1.5rem;
+    top: 12px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .back-arrow {
+    font-size: 1.75rem;
+    top: 50px;
+  }
 }
