@@ -3,6 +3,7 @@ import SearchSort from "../SearchSort/SearchSort";
 import React from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -25,9 +26,16 @@ const HomePage = () => {
     return () => setLoaded(false);
   }, []);
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 800,
+      smooth: true,
+    });
+  };
+
   return (
     <div>
-      <h1>Find A Ghibli Movie</h1>
+      <h1 id="top-of-home">Find A Ghibli Movie</h1>
       <SearchSort
         movies={movies}
         setMovies={setMovies}
@@ -73,6 +81,11 @@ const HomePage = () => {
             </div>
           ))}
       </div>
+      <footer>
+        <Link onClick={scrollToTop} to="" className="scroll-to-top">
+          Back to Top
+        </Link>
+      </footer>
     </div>
   );
 };

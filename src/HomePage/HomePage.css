@@ -46,6 +46,17 @@
   width: 85%;
 }
 
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+.scroll-to-top {
+  color: white;
+}
+.scroll-to-top:hover {
+  color: #d6c997;
+}
+
 @media screen and (max-width: 900px) {
   .home-page-movie-poster {
     max-width: 72%;
