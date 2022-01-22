@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4rem;
+  margin: 2rem auto;
 }
 
 .home-page-movie-poster {
@@ -20,7 +20,7 @@
 
 .home-page-movie-title {
   font-size: clamp(1.1rem, 4.5vw, 1.7rem);
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 .movie-basic-info {
@@ -37,5 +37,11 @@
   }
   .movie-basic-info {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 352px) {
+  .home-page-movie-title {
+    text-align: center;
   }
 }
