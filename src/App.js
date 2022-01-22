@@ -8,14 +8,14 @@ function App() {
   return (
     <div className="App">
       <Switch>
+      <Route exact path="/favorites">
+          <Favorites />
+        </Route>
         <Route exact path="/">
           <HomePage />
         </Route>
         <Route exact path="/:movieId">
           <Movie />
-        </Route>
-        <Route exact path="/favorites">
-          <Favorites />
         </Route>
       </Switch>
     </div>

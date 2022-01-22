@@ -27,6 +27,32 @@
   animation: posterGrow 1.75s ease-in-out;
 }
 
+.home-page-favorite-btn {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.8rem 2rem;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(192, 36, 36);
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.15s ease-in-out;
+}
+.home-page-favorite-btn:active {
+  transform: scale(0.98);
+}
+.home-page-favorite-btn:hover {
+  background-color: #db6a6a;
+}
+.fav-btn-wrapper {
+  width: 100%;
+  margin: 2rem auto 1rem auto;
+  text-align: center;
+}
+
 .year {
   font-size: 1.1rem;
 }

@@ -1,0 +1,42 @@
+.favorites-back-arrow {
+  font-size: 2rem;
+  position: absolute;
+  top: 25px;
+  left: 15px;
+}
+
+.favs-h1 {
+    text-align: center;
+    margin: 0rem auto 1rem auto;
+    font-size: clamp(2.8rem, 8vw, 4rem);
+}
+
+.favorite-page-movie-poster {
+    max-width: 85%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+.remove-favorite-btn {
+    position: absolute;
+    color: rgb(138, 22, 22);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    right: 10px;
+    top: 5px;
+}
+
+@media screen and (max-width: 582px) {
+    .favorites-back-arrow {
+        top: 10px;
+    }
+}
+@media screen and (max-width: 344px) {
+    .favorites-back-arrow {
+        font-size: 1.7rem;
+        top: 17px;
+    }
+}

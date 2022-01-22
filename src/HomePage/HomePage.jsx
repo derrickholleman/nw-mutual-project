@@ -45,6 +45,11 @@ const HomePage = () => {
         setFilteredMovies={setFilteredMovies}
         setIsFiltering={setIsFiltering}
       />
+      <div className="fav-btn-wrapper">
+        <Link to="/favorites">
+          <button className="home-page-favorite-btn">Go To Favorites</button>
+        </Link>
+      </div>
       <div className="home-page-container">
         {/* default movie list */}
         {loaded &&
@@ -85,7 +90,7 @@ const HomePage = () => {
           ))}
       </div>
       <footer>
-        <Link onClick={scrollToTop} to="" className="scroll-to-top">
+        <Link onClick={scrollToTop} to="/" className="scroll-to-top">
           Back to Top
         </Link>
       </footer>
