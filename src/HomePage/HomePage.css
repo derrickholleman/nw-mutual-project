@@ -79,9 +79,14 @@
 footer {
   text-align: center;
   padding: 1rem;
+  position: relative;
 }
 .scroll-to-top {
   color: white;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  margin-left: -46px;
 }
 .scroll-to-top:hover {
   color: #d6c997;

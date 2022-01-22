@@ -42,6 +42,11 @@ const Favorites = () => {
         <BsFillArrowLeftSquareFill />
       </Link>
       <h1 className="favs-h1">Favorites</h1>
+      {favorites.length === 0 && (
+        <p style={{ textAlign: "center" }}>
+          You currently have no favorites added!
+        </p>
+      )}
       {loaded &&
         favorites.map((favorite) => (
           <div key={favorite.id} className="home-page-movie-container">
