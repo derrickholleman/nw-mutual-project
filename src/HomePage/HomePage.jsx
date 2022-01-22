@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import './HomePage.css'
+import "./HomePage.css";
 
-const Movies = () => {
+const HomePage = () => {
   const [movies, setMovies] = useState({});
   const [loaded, setLoaded] = useState(false);
 
@@ -22,21 +22,24 @@ const Movies = () => {
   }, []);
 
   return (
-    <div className="home-page-container">
-      {loaded &&
-        movies.map((movie) => (
-          <div key={movie.id} className="home-page-movie-container">
-            <div className="movie-basic-info">
-              <h2 className="home-page-movie-title">{movie.title}</h2>
-              <p>{movie.release_date}</p>
+    <div>
+      <h1>Find A Ghibli Movie</h1>
+      <div className="home-page-container">
+        {loaded &&
+          movies.map((movie) => (
+            <div key={movie.id} className="home-page-movie-container">
+              <div className="movie-basic-info">
+                <h2 className="home-page-movie-title">{movie.title}</h2>
+                <p>{movie.release_date}</p>
+              </div>
+              <div className="home-page-movie-poster">
+                <img src={movie.image} alt={`${movie.title} poster`} />
+              </div>
             </div>
-            <div className="home-page-movie-poster">
-              <img src={movie.image} alt={`${movie.title} poster`} />
-            </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 };
 
-export default Movies;
+export default HomePage;
