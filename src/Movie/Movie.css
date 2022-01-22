@@ -1,0 +1,18 @@
+.background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 500px;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.25;
+}
+
+@media screen and (max-width: 867px) {
+    .background {
+        background-size: contain;
+    }
+}

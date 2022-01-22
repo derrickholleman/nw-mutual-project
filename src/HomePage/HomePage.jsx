@@ -4,6 +4,7 @@ import React from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
+import { getMovies } from "../utils/api";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -11,16 +12,16 @@ const HomePage = () => {
   const [loaded, setLoaded] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
 
-  useEffect(() => {
-    async function getMovies() {
-      const moviesRes = await fetch("https://ghibliapi.herokuapp.com/films");
-      const moviesJSON = await moviesRes.json();
-      setMovies(moviesJSON);
+  function loadMovies() {
+    getMovies().then((moviesRes) => {
+      setMovies(moviesRes);
       setLoaded(true);
-    }
+    });
+  }
 
+  useEffect(() => {
     if (movies) {
-      getMovies();
+      loadMovies();
     }
 
     return () => setLoaded(false);
@@ -35,7 +36,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1 id="top-of-home">Find A Ghibli Movie</h1>
+      <header>
+        <h1 id="top-of-home">Find A Ghibli Movie</h1>
+      </header>
       <SearchSort
         movies={movies}
         setMovies={setMovies}
