@@ -59,6 +59,7 @@ const Favorites = () => {
                   <button
                     className="remove-favorite-btn"
                     onClick={() => handleDeleteFavorite(favorite.id)}
+                    aria-label="remove favorite"
                   >
                     X
                   </button>
