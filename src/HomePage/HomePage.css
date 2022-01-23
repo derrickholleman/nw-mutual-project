@@ -102,6 +102,24 @@ footer {
   }
 }
 
+@media screen and (max-width: 512px) {
+  .scroll-to-top {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .scroll-to-top {
+    left: 12px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .scroll-to-top {
+    left: 7px;
+  }
+}
+
 @media screen and (max-width: 352px) {
   .home-page-movie-title {
     text-align: center;
