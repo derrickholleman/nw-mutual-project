@@ -78,6 +78,11 @@
   font-size: 1.1rem;
 }
 
+.characters-heading {
+  margin: 2rem 0 1rem 0;
+  color: rgba(26, 23, 12, 0.753);
+}
+
 .movie-info-poster {
   max-width: 500px;
 }

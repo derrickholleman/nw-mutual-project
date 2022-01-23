@@ -7,7 +7,9 @@ import { addFavorite } from "../utils/api";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
+  const [characters, setCharacters] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const [loadedCharacters, setLoadedCharacters] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const { movieId } = useParams();
   const foundMovie = movies.find((movie) => movie.id === movieId);
@@ -37,6 +39,21 @@ const Movie = () => {
     return () => setLoaded(false);
     // eslint-disable-next-line
   }, [movieId]);
+
+  useEffect(() => {
+    if (foundMovie) {
+      Promise.all(
+        foundMovie.people.map(async (characters) => {
+          const charactersRes = await fetch(characters);
+          const charactersJSON = await charactersRes.json();
+          setCharacters((character) => [...character, charactersJSON]);
+          setLoadedCharacters(true);
+        })
+      );
+    }
+
+    return () => setLoadedCharacters(false);
+  }, [foundMovie]);
 
   const addToFavorites = async () => {
     await addFavorite(foundMovie);
@@ -84,6 +101,23 @@ const Movie = () => {
               <p>Original Title: {foundMovie.original_title}</p>
               <p>Description: {foundMovie.description}</p>
               <p>Rotten Tomatoes Score: {foundMovie.rt_score}%</p>
+
+              {/* characters section */}
+              {characters.length > 1 && (
+                <h2 className="characters-heading">Prominent Characters</h2>
+              )}
+              {characters.length > 1 &&
+                loadedCharacters &&
+                characters
+                  .map((character, index) => (
+                    <div key={index}>
+                      <p>
+                        {character.name} ({character.gender})
+                      </p>
+                      <p>Age: {character.age}</p>
+                    </div>
+                  ))
+                  .slice(0, 10)}
             </div>
           </div>
         </div>
