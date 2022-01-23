@@ -15,25 +15,29 @@ const Movie = () => {
   const foundMovie = movies.find((movie) => movie.id === movieId);
 
   function loadMovies() {
-    getMovies().then((movieRes) => {
-      setMovies(movieRes);
-      setLoaded(true);
-    });
+    getMovies()
+      .then((movieRes) => {
+        setMovies(movieRes);
+        setLoaded(true);
+      })
+      .catch((err) => console.error(err));
   }
 
   useEffect(() => {
     if (movies) {
       loadMovies();
 
-      getFavorites().then((res) => {
-        const foundFav = res.find((favorite) => favorite.id === movieId);
+      getFavorites()
+        .then((res) => {
+          const foundFav = res.find((favorite) => favorite.id === movieId);
 
-        if (foundFav) {
-          setIsFavorite(true);
-        } else {
-          setIsFavorite(false);
-        }
-      });
+          if (foundFav) {
+            setIsFavorite(true);
+          } else {
+            setIsFavorite(false);
+          }
+        })
+        .catch((err) => console.error(err));
     }
 
     return () => setLoaded(false);
@@ -84,7 +88,12 @@ const Movie = () => {
                 : "Add Movie to Favorites"}
             </button>
           </div>
-          <Link to="/" className="back-arrow">
+          <Link
+            to="/"
+            className="back-arrow"
+            role="button"
+            aria-label="go back to home page"
+          >
             <BsFillArrowLeftSquareFill />
           </Link>
           <div className="movie-info-section">
