@@ -19,14 +19,15 @@
 
 .remove-favorite-btn {
   position: absolute;
-  color: rgb(138, 22, 22);
+  color: rgb(255, 255, 255);
   border: none;
   outline: none;
-  background-color: transparent;
-  font-size: 2rem;
+  background-color: #100e04;
+  font-size: 2.25rem;
   cursor: pointer;
-  right: 10px;
-  top: 5px;
+  right: 0px;
+  top: 0px;
+  padding: .5rem;
 }
 
 @media screen and (max-width: 900px) {

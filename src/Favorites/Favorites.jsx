@@ -60,7 +60,7 @@ const Favorites = () => {
                     className="remove-favorite-btn"
                     onClick={() => handleDeleteFavorite(favorite.id)}
                   >
-                    Remove
+                    X
                   </button>
                   <Link to={`/${favorite.id}`}>
                     <img
