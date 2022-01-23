@@ -65,7 +65,7 @@
 
 .home-page-movie-title {
   font-size: clamp(1.1rem, 4.5vw, 1.7rem);
-  margin-right: 0.5rem;
+  text-align: center;
 }
 
 .movie-basic-info {
