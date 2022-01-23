@@ -10,7 +10,6 @@ import { deleteFavorite } from "../utils/api";
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
   const [loaded, setLoaded] = useState(false);
-  const [confirmDelete, setConfirmDelete] = useState(true);
 
   useEffect(() => {
     getFavorites()
@@ -19,8 +18,6 @@ const Favorites = () => {
         setLoaded(true);
       })
       .catch((err) => console.error(err));
-
-      return () => setConfirmDelete(true)
   }, []);
 
   const scrollToTop = () => {
@@ -31,20 +28,10 @@ const Favorites = () => {
   };
 
   const handleDeleteFavorite = async (id) => {
-    if (confirmDelete) {
-      try {
-        const confirmDelete = window.confirm(
-          "Are you sure you want to delete this favorite?"
-        );
-
-        if (confirmDelete) {
-          await deleteFavorite(id).then(getFavorites).then(setFavorites);
-
-          setConfirmDelete(false)
-        }
-      } catch (err) {
-        console.error(err);
-      }
+    try {
+      await deleteFavorite(id).then(getFavorites).then(setFavorites);
+    } catch (err) {
+      console.error(err);
     }
   };
 
