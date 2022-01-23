@@ -38,12 +38,12 @@
 
 @media screen and (max-width: 582px) {
   .favorites-back-arrow {
-    top: 10px;
+    top: 13px;
   }
 }
 @media screen and (max-width: 344px) {
   .favorites-back-arrow {
     font-size: 1.7rem;
-    top: 20px;
+    top: 17px;
   }
 }
