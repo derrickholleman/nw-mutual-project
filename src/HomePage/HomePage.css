@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;
   margin: 2rem auto;
+  max-width: 400px;
 }
 
 .movie-poster-wrapper {
@@ -19,7 +20,7 @@
 }
 
 .home-page-movie-poster {
-  max-width: 85%;
+  max-width: 45%;
   margin: 0 auto;
 }
 
@@ -75,6 +76,7 @@
   margin-bottom: .5rem;
   max-width: 500px;
   width: 85%;
+  min-height: 84px;
 }
 
 footer {
@@ -93,12 +95,12 @@ footer {
   color: #d6c997;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 903px) {
   .home-page-movie-poster {
-    max-width: 72%;
+    max-width: 82%;
   }
   .movie-basic-info {
-    flex-direction: column;
+    min-height: auto;
   }
 }
 

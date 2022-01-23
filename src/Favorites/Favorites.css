@@ -12,7 +12,7 @@
 }
 
 .favorite-page-movie-poster {
-  max-width: 85%;
+  max-width: 45%;
   margin: 0 auto;
   position: relative;
 }
@@ -30,9 +30,9 @@
   padding: .5rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 903px) {
   .favorite-page-movie-poster {
-    max-width: 72%;
+    max-width: 82%;
   }
 }
 
