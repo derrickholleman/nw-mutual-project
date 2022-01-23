@@ -14,10 +14,12 @@ const HomePage = () => {
   const [isFiltering, setIsFiltering] = useState(false);
 
   function loadMovies() {
-    getMovies().then((moviesRes) => {
-      setMovies(moviesRes);
-      setLoaded(true);
-    });
+    getMovies()
+      .then((moviesRes) => {
+        setMovies(moviesRes);
+        setLoaded(true);
+      })
+      .catch((err) => console.error(err));
   }
 
   useEffect(() => {
