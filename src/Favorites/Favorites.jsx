@@ -32,8 +32,6 @@ const Favorites = () => {
 
     if (confirmDelete) {
       await deleteFavorite(id).then(getFavorites).then(setFavorites);
-    } else {
-      return null;
     }
   };
 
