@@ -48,28 +48,33 @@ const Favorites = () => {
           You currently have no favorites added!
         </p>
       )}
-      {loaded &&
-        favorites.map((favorite) => (
-          <div key={favorite.id} className="home-page-movie-container">
-            <div className="movie-basic-info">
-              <h2 className="home-page-movie-title">{favorite.title}</h2>
-              <p className="year">{favorite.release_date}</p>
-            </div>
-            <div className="movie-poster-wrapper">
-              <div className="favorite-page-movie-poster">
-                <button
-                  className="remove-favorite-btn"
-                  onClick={() => handleDeleteFavorite(favorite.id)}
-                >
-                  Remove
-                </button>
-                <Link to={`/${favorite.id}`}>
-                  <img src={favorite.image} alt={`${favorite.title} poster`} />
-                </Link>
+      <div className="home-page-container">
+        {loaded &&
+          favorites.map((favorite) => (
+            <div key={favorite.id} className="home-page-movie-container">
+              <div className="movie-basic-info">
+                <h2 className="home-page-movie-title">{favorite.title}</h2>
+                <p className="year">{favorite.release_date}</p>
+              </div>
+              <div className="movie-poster-wrapper">
+                <div className="favorite-page-movie-poster">
+                  <button
+                    className="remove-favorite-btn"
+                    onClick={() => handleDeleteFavorite(favorite.id)}
+                  >
+                    Remove
+                  </button>
+                  <Link to={`/${favorite.id}`}>
+                    <img
+                      src={favorite.image}
+                      alt={`${favorite.title} poster`}
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
       <footer>
         {favorites.length > 1 && (
           <Link onClick={scrollToTop} to="/favorites" className="scroll-to-top">
