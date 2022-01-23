@@ -51,8 +51,9 @@ const Favorites = () => {
           favorites.map((favorite) => (
             <div key={favorite.id} className="home-page-movie-container">
               <div className="movie-basic-info">
-                <h2 className="home-page-movie-title">{favorite.title}</h2>
-                <p className="year">{favorite.release_date}</p>
+                <h2 className="home-page-movie-title">
+                  {favorite.title} ({favorite.release_date})
+                </h2>
               </div>
               <div className="movie-poster-wrapper">
                 <div className="favorite-page-movie-poster">
