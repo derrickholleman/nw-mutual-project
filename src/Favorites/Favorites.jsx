@@ -25,13 +25,13 @@ const Favorites = () => {
     });
   };
 
-  const handleDeleteFavorite = async (id) => {
+  const handleDeleteFavorite = (id) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this favorite?"
     );
 
     if (confirmDelete) {
-      await deleteFavorite(id).then(getFavorites).then(setFavorites);
+      deleteFavorite(id).then(getFavorites).then(setFavorites);
     }
   };
 
