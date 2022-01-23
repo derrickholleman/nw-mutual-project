@@ -3,6 +3,7 @@ import { getFavorites } from "../utils/api";
 import "./Favorites.css";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import { AiOutlineArrowUp } from "react-icons/ai";
 import { animateScroll as scroll } from "react-scroll";
 import { deleteFavorite } from "../utils/api";
 
@@ -72,7 +73,7 @@ const Favorites = () => {
       <footer>
         {favorites.length > 1 && (
           <Link onClick={scrollToTop} to="/favorites" className="scroll-to-top">
-            Back to Top
+            <AiOutlineArrowUp />
           </Link>
         )}
       </footer>

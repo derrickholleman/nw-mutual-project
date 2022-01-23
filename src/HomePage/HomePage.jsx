@@ -5,6 +5,7 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import { getMovies } from "../utils/api";
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -58,8 +59,9 @@ const HomePage = () => {
           movies.map((movie) => (
             <div key={movie.id} className="home-page-movie-container">
               <div className="movie-basic-info">
-                <h2 className="home-page-movie-title">{movie.title}</h2>
-                <p className="year">{movie.release_date}</p>
+                <h2 className="home-page-movie-title">
+                  {movie.title} ({movie.release_date})
+                </h2>
               </div>
               <div className="movie-poster-wrapper">
                 <div className="home-page-movie-poster">
@@ -77,8 +79,9 @@ const HomePage = () => {
           filteredMovies.map((movie) => (
             <div key={movie.id} className="home-page-movie-container">
               <div className="movie-basic-info">
-                <h2 className="home-page-movie-title">{movie.title}</h2>
-                <p>{movie.release_date}</p>
+                <h2 className="home-page-movie-title">
+                  {movie.title} ({movie.release_date})
+                </h2>
               </div>
               <div className="movie-poster-wrapper">
                 <div className="home-page-movie-poster">
@@ -92,7 +95,7 @@ const HomePage = () => {
       </div>
       <footer>
         <Link onClick={scrollToTop} to="/" className="scroll-to-top">
-          Back to Top
+          <AiOutlineArrowUp />
         </Link>
       </footer>
     </div>
