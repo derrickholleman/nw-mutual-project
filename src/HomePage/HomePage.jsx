@@ -94,7 +94,13 @@ const HomePage = () => {
           ))}
       </div>
       <footer>
-        <Link onClick={scrollToTop} to="/" className="scroll-to-top">
+        <Link
+          onClick={scrollToTop}
+          to="/"
+          className="scroll-to-top"
+          aria-label="go back to top of page"
+          role="button"
+        >
           <AiOutlineArrowUp />
         </Link>
       </footer>

@@ -37,7 +37,12 @@ const Favorites = () => {
 
   return (
     <div>
-      <Link to="/" className="favorites-back-arrow">
+      <Link
+        to="/"
+        className="favorites-back-arrow"
+        role="button"
+        aria-label="go back to home page"
+      >
         <BsFillArrowLeftSquareFill />
       </Link>
       <h1 className="favs-h1">Favorites</h1>
@@ -77,7 +82,13 @@ const Favorites = () => {
       </div>
       <footer>
         {favorites.length > 1 && (
-          <Link onClick={scrollToTop} to="/favorites" className="scroll-to-top">
+          <Link
+            onClick={scrollToTop}
+            to="/favorites"
+            className="scroll-to-top"
+            aria-label="go back to top of page"
+            role="button"
+          >
             <AiOutlineArrowUp />
           </Link>
         )}
