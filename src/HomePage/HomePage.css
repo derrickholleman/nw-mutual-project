@@ -97,7 +97,7 @@ footer {
 
 @media screen and (max-width: 903px) {
   .home-page-movie-poster {
-    max-width: 82%;
+    max-width: 72%;
   }
   .movie-basic-info {
     min-height: auto;
