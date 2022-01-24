@@ -25,7 +25,7 @@
 }
 
 .home-page-movie-poster:hover {
-  animation: posterGrow 1.25s ease-in-out;
+  animation: posterGrow 1.25s ease-out;
 }
 
 @keyframes posterGrow {
