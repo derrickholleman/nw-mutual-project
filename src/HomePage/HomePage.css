@@ -26,14 +26,7 @@
 }
 
 .home-page-movie-poster:hover {
-  /* animation: posterGrow 1.25s ease-out; */
   transform: scale(1.3);
-}
-
-@keyframes posterGrow {
-  50% {
-    transform: scale(1.3);
-  }
 }
 
 .home-page-favorite-btn {
@@ -75,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   max-width: 500px;
   width: 85%;
   min-height: 84px;
