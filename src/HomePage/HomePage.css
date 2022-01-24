@@ -22,10 +22,12 @@
 .home-page-movie-poster {
   max-width: 45%;
   margin: 0 auto;
+  transition: transform 1s ease-out;
 }
 
 .home-page-movie-poster:hover {
-  animation: posterGrow 1.25s ease-out;
+  /* animation: posterGrow 1.25s ease-out; */
+  transform: scale(1.3);
 }
 
 @keyframes posterGrow {
